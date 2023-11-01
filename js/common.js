@@ -1,5 +1,7 @@
-function inputFieldValueFunction(){
-    const inputField = document.getElementById('iPhone-inputField');
+
+function inputFieldValueFunction(parameter){
+    const inputField = document.getElementById(parameter);
     const inputFieldString = inputField.value;
-    const inputFieldValue = parseInt(inputFieldString);
+    const inputValue = parseInt(inputFieldString);
+    return inputValue;
 };
