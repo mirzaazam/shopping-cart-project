@@ -1,10 +1,3 @@
-function getInputValue(value) {
-    const inputField = document.getElementById(value);
-    const inputFieldString = inputField.value;
-    const inputFieldValue = parseInt(inputFieldString);
-    return inputFieldValue;
-    
-};
 
 function updateInputValue(value) {
     const inputField = document.getElementById('iPhone-inputField');
@@ -38,7 +31,7 @@ document.getElementById('minus-btn').addEventListener('click', function () {
     const inputField = document.getElementById('iPhone-inputField');
     const inputFieldString = inputField.value;
     const inputFieldValue = parseInt(inputFieldString);
-    
+
     if (0 < inputFieldValue) {
         const increageValue = updateInputValue(false);
         phonePriceCount(increageValue);
