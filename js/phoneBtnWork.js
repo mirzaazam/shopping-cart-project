@@ -11,34 +11,27 @@ function updateInputValue(value) {
         increageValue = inputFieldValue - 1;
     }
     inputField.value = increageValue;
+    return increageValue;
 }
 
+function phonePriceCount(element) {
+    // const inputField = document.getElementById('iPhone-inputField');
+    // const inputFieldString = inputField.value;
+    // const inputFieldValue = parseInt(inputFieldString);
+
+    const phonePriceUpdate = element * 1219;
+    let getFirstPhonePrice = document.getElementById('phone-price');
+    getFirstPhonePrice.innerText = phonePriceUpdate;
+};
 
 document.getElementById('plus-btn').addEventListener('click', function () {
-    updateInputValue(true);
+   const increageValue =  updateInputValue(true);
     // const phoneInputValue = inputFieldValueFunction(iPhone-inputField);
-    
-    const inputField = document.getElementById('iPhone-inputField');
-    const inputFieldString = inputField.value;
-    const inputFieldValue = parseInt(inputFieldString);
-
-    const phonePrice = document.getElementById('phone-price');
-    const phonePriceTotal = inputFieldValue * 1219;
-    phonePrice.innerText = phonePriceTotal;
+    phonePriceCount(increageValue);
 });
 
 document.getElementById('minus-btn').addEventListener('click', function () {
-
-    const inputField = document.getElementById('iPhone-inputField');
-    const inputFieldString = inputField.value;
-    const inputFieldValue = parseInt(inputFieldString);
-
-    const phonePrice = document.getElementById('phone-price');
-    const phonePriceTotal = inputFieldValue * 1219;
-    phonePrice.innerText = phonePriceTotal;
-    
-    if (0 < inputFieldValue) {
-        updateInputValue(false);
-    }
+    const increageValue =  updateInputValue(false);
+    phonePriceCount(increageValue);
 
 });
