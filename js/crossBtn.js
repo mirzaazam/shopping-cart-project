@@ -3,7 +3,7 @@ document.getElementById('phone-remove').addEventListener('click', function (){
     phoneRow.style.display = 'none';
 });
 
-document.getElementById('row-case').addEventListener('click', function(){
+document.getElementById('caseCross').addEventListener('click', function(){
     const rowCase = document.getElementById('row-case');
     rowCase.style.display = 'none';
 });

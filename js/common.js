@@ -6,6 +6,10 @@ function getInputFieldValueFunction(parameter){
     return inputValue;
 };
 
-// const inputField = document.getElementById('case-inputField');
-//     const inputFieldString = inputField.value;
-//     const inputValue = parseInt(inputFieldString);
+function phonePriceCount(element, value, setValue) {
+    const phonePriceUpdate = element * value;
+    let getFirstPhonePrice = document.getElementById(setValue);
+    const quntityPrice = getFirstPhonePrice.innerText = phonePriceUpdate;
+    return quntityPrice;
+};
+

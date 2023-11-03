@@ -33,7 +33,7 @@ document.getElementById('btn-case-minius').addEventListener('click', function ()
     const inputValue = parseInt(inputFieldString);
     if (0 < inputValue) {
        const putNumber = inputFieldValue(false);
-        priceAdded(putNumber);
+       priceAdded(putNumber);
     }
     
 
