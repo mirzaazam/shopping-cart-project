@@ -29,11 +29,11 @@ function phonePriceCount(element, value) {
     return quntityPrice;
 };
 
+//set phone per price in phone quantity price.
 function elementPriceCount(element){
-    const subtotal = document.getElementById('subtotal');
+    const phoneQuantityPrice = document.getElementById('phone-quantityPrice');
     const quntityPrice = phonePriceCount(element, 1219);
-
-    subtotal.innerText = quntityPrice;
+    phoneQuantityPrice.innerText = quntityPrice;
 
 };
 
@@ -54,7 +54,7 @@ document.getElementById('minus-btn').addEventListener('click', function () {
     if (0 < inputFieldValue) {
         const increageValue = updateInputValue(false);
         phonePriceCount(increageValue, 1219);
-        // elementPriceCount(increageValue);
+        elementPriceCount(increageValue);
     }
 
 });
