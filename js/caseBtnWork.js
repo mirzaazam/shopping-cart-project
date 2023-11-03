@@ -21,8 +21,8 @@ function inputFieldValue(value) {
 function priceAdded(value){
     const priceOfCase = document.getElementById('priceCase');
     const priceCount = value * 59;
-    priceOfCase.innerText = priceCount;
-    return priceCount;
+    const caseingFinalValue =  priceOfCase.innerText = priceCount;
+    return caseingFinalValue;
 };
 
 //set quantity price in down quantity price
@@ -37,6 +37,7 @@ document.getElementById('btn-case-plus').addEventListener('click', function () {
     const putNumber = inputFieldValue(true);
     priceAdded(putNumber);
     setCaseingQuantityPrice(putNumber);
+
 });
 
 //event handlar for decrease input value

@@ -1,15 +1,13 @@
 
-function getInputFieldValueFunction(parameter){
-    const inputField = document.getElementById(parameter);
-    const inputFieldString = inputField.value;
-    const inputValue = parseInt(inputFieldString);
-    return inputValue;
-};
 
-function phonePriceCount(element, value, setValue) {
-    const phonePriceUpdate = element * value;
-    let getFirstPhonePrice = document.getElementById(setValue);
-    const quntityPrice = getFirstPhonePrice.innerText = phonePriceUpdate;
-    return quntityPrice;
-};
 
+function finalCalculate(){
+    const total = document.getElementById('total');
+    const increageValue = updateInputValue(true);
+    const phoneFinalPrice = elementPriceCount(increageValue)
+    const putNumber = inputFieldValue(true);
+    const caseingFinalValue = priceAdded(putNumber)
+    const result = phoneFinalPrice + caseingFinalValue;
+    total.innerText = result;
+    
+}

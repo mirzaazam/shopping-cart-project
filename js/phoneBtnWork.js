@@ -15,7 +15,7 @@ function updateInputValue(value) {
     else {
         increageValue = inputFieldValue - 1;
     }
-    
+
     //set value in input field.
     inputField.value = increageValue;
     return increageValue;
@@ -30,18 +30,27 @@ function phonePriceCount(element, value) {
 };
 
 //set phone per price in phone quantity price.
-function elementPriceCount(element){
+function elementPriceCount(element) {
     const phoneQuantityPrice = document.getElementById('phone-quantityPrice');
     const quntityPrice = phonePriceCount(element, 1219);
-    phoneQuantityPrice.innerText = quntityPrice;
-
+    const phoneFinalPrice =  phoneQuantityPrice.innerText = quntityPrice;
+    return phoneFinalPrice;
 };
+
+//total calculate
+function totalCalculate(element) {
+    const total = document.getElementById('total');
+
+    const phoneValue = elementPriceCount(element);
+
+}
 
 //eventhandler for pluse button
 document.getElementById('plus-btn').addEventListener('click', function () {
     const increageValue = updateInputValue(true);
     phonePriceCount(increageValue, 1219);
-    elementPriceCount(increageValue);
+    const phoneValue = elementPriceCount(increageValue);
+    finalCalculate();
 });
 
 //eventhandler for minius button.
