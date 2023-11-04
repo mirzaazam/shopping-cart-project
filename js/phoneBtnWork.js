@@ -19,38 +19,31 @@ function updateInputValue(value) {
     //set value in input field.
     inputField.value = increageValue;
     return increageValue;
-}
+};
 
 // this function for calculate quntity price.
-function phonePriceCount(element, value) {
-    const phonePriceUpdate = element * value;
-    let getFirstPhonePrice = document.getElementById('phone-price');
-    const quntityPrice = getFirstPhonePrice.innerText = phonePriceUpdate;
-    return quntityPrice;
+function phonePriceCount(element) {
+    let getPhonePrice = document.getElementById('phone-price');
+
+    const phonePriceUpdate = element * 1219;
+    getPhonePrice.innerText = phonePriceUpdate;
+    return phonePriceUpdate;
 };
 
-//set phone per price in phone quantity price.
-function elementPriceCount(element) {
-    const phoneQuantityPrice = document.getElementById('phone-quantityPrice');
-    const quntityPrice = phonePriceCount(element, 1219);
-    const phoneFinalPrice =  phoneQuantityPrice.innerText = quntityPrice;
-    return phoneFinalPrice;
+//set phone price down below:
+function setphoneQuantityPrice(increageValue) {
+    const setCaseingPrice = document.getElementById('phone-quantityPrice');
+
+    const phonePrice = phonePriceCount(increageValue);
+    setCaseingPrice.innerText = phonePrice;
 };
-
-//total calculate
-function totalCalculate(element) {
-    const total = document.getElementById('total');
-
-    const phoneValue = elementPriceCount(element);
-
-}
 
 //eventhandler for pluse button
 document.getElementById('plus-btn').addEventListener('click', function () {
     const increageValue = updateInputValue(true);
-    phonePriceCount(increageValue, 1219);
-    const phoneValue = elementPriceCount(increageValue);
-    finalCalculate();
+    phonePriceCount(increageValue);
+    setphoneQuantityPrice(increageValue);
+    calculateTotal();
 });
 
 //eventhandler for minius button.
@@ -62,8 +55,8 @@ document.getElementById('minus-btn').addEventListener('click', function () {
     //this logic for not found nagetive value in input field.
     if (0 < inputFieldValue) {
         const increageValue = updateInputValue(false);
-        phonePriceCount(increageValue, 1219);
-        elementPriceCount(increageValue);
+        phonePriceCount(increageValue);
+        setphoneQuantityPrice(increageValue);
+        calculateTotal();
     }
-
 });

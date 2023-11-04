@@ -15,29 +15,30 @@ function inputFieldValue(value) {
 
     inputField.value = putNumber;
     return putNumber;
-}
+};
 
 //calculate quantity price
-function priceAdded(value){
+function priceAdded(value) {
     const priceOfCase = document.getElementById('priceCase');
     const priceCount = value * 59;
-    const caseingFinalValue =  priceOfCase.innerText = priceCount;
+    const caseingFinalValue = priceOfCase.innerText = priceCount;
     return caseingFinalValue;
 };
 
 //set quantity price in down quantity price
-function setCaseingQuantityPrice(putNumber){
+function setCaseingQuantityPrice(putNumber) {
     const caseing = document.getElementById('caseing-quantityPrice');
-   const caseingPrice = priceAdded(putNumber);
-   caseing.innerText = caseingPrice;
-}
+
+    const caseingPrice = priceAdded(putNumber);
+    caseing.innerText = caseingPrice;
+};
 
 //event handlar for increase input value
 document.getElementById('btn-case-plus').addEventListener('click', function () {
     const putNumber = inputFieldValue(true);
     priceAdded(putNumber);
     setCaseingQuantityPrice(putNumber);
-
+    calculateTotal()
 });
 
 //event handlar for decrease input value
@@ -46,10 +47,9 @@ document.getElementById('btn-case-minius').addEventListener('click', function ()
     const inputFieldString = inputField.value;
     const inputValue = parseInt(inputFieldString);
     if (0 < inputValue) {
-       const putNumber = inputFieldValue(false);
-       priceAdded(putNumber);
-       setCaseingQuantityPrice(putNumber);
+        const putNumber = inputFieldValue(false);
+        priceAdded(putNumber);
+        setCaseingQuantityPrice(putNumber);
+        calculateTotal()
     }
-    
-
 });
